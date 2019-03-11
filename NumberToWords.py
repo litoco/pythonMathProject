@@ -26,8 +26,8 @@ for x in numberinlist:
     operationnumber=int(x)
     tenscount=0
     while(operationnumber!=0):##till operationnumber is non zero with the help of the operationnumber we can find the wording of the number
-        if(operationnumber/100>0):
-            finalstring+=a[operationnumber/100]+" "##finalstring is the string containing the number in word form
+        if(int(operationnumber/100)>0):
+            finalstring+=a[int(operationnumber/100)]+" "##finalstring is the string containing the number in word form
             finalstring+='hundred '##if the grouped number is divisible by 100 then it should contain hundred
             operationnumber%=100##if the number is added in the word then the remaining number should be processed here after
         else:
@@ -35,7 +35,7 @@ for x in numberinlist:
                 finalstring+=a[operationnumber]+" "
                 operationnumber=0##finally operation number is found and implemented now is set to 0 to complete loop
             else:
-                tenscount = operationnumber/10##if operationnumber is divisible by 10 then its stored in tenscount  and founded in b
+                tenscount = int(operationnumber/10)##if operationnumber is divisible by 10 then its stored in tenscount  and founded in b
                 if(tenscount!=0):##operationnumber is not divisible by 10
                     finalstring+=b[tenscount-2]+' '
                     operationnumber%=10##operationnumber is updated to contain numbers within a
